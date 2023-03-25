@@ -515,7 +515,7 @@ class Bullet extends EngineObject
         // check if hit someone
         forEachObject(this.pos, this.size, (o)=>
         {
-            if (o.isGameObject && !o.parent)
+            if (o.isGameObject && !o.parent && this.attacker != o)
             if (!o.dodgeTimer || !o.dodgeTimer.active())
                 this.collideWithObject(o)
         });
